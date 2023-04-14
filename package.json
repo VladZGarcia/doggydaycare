@@ -1,7 +1,7 @@
 {
   "name": "doggy-day-care",
   "private": true,
-  "homepage": "https://vladzgarcia.github.io/Doggy-Day-CareCSS/",
+  "homepage": "https://VladZGarcia.github.io/doggydaycare/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -29,12 +29,12 @@
   "main": "vite.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VladZGarcia/Doggy-Day-CareCSS.git"
+    "url": "git+https://github.com/VladZGarcia/doggydaycare.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VladZGarcia/Doggy-Day-CareCSS/issues"
+    "url": "https://github.com/VladZGarcia/doggydaycare/issues"
   },
   "description": ""
 }
