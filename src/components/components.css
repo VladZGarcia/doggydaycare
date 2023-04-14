@@ -27,7 +27,7 @@ body {
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-image: url('../assets/img/dogsWellcome.jpeg');
+    background-image: url('https://www.dogstrust.org.uk/images/800x600/assets/2022-08/Bubba_terrier_meadow_800x600.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;

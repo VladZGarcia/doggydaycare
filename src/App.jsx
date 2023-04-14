@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { HashRouter as Router } from 'react-router-dom'
 import { Route, Routes } from 'react-router-dom'
 import Welcome from './components/Welcome'
 import Home from './components/Home'
@@ -9,11 +10,14 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Welcome />}></Route>
-        <Route path="/Home" element={<Home />}></Route>
-        <Route path="/:index" element={<SingleDog />}></Route>
-      </Routes>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Welcome />}></Route>
+          <Route path="/Home" element={<Home />}></Route>
+          <Route path="/:index" element={<SingleDog />}></Route>
+        </Routes>
+      </Router>
+
     </>
   )
 }

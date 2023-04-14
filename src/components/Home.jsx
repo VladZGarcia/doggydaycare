@@ -9,7 +9,7 @@ function Home() {
     let dogsLocal = JSON.parse(localStorage.getItem("dogs"));
     console.log(dogsLocal.length)
 
-    if (dogsLocal.length == 0) {
+    if (dogsLocal.length == 0 || dogsLocal == null) {
 
         useEffect(() => {
             const fetchDogData = async () => {
