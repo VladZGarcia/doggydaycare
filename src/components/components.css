@@ -223,6 +223,13 @@ body {
     }
 }
 
+.single-img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 0.25rem;
+    height: 18rem
+}
+
 .single-infolist {
     font-size: 0.875rem;
     line-height: 1.25rem;

@@ -10,7 +10,7 @@ function SingleDog() {
     console.log("dogsLocal: ", dogsLocal[index]);
     let dog = (dogsLocal[index]);
     console.log("dog: ", dog);
-    
+
     return (
         <>
             <section className="single-section">
@@ -18,7 +18,7 @@ function SingleDog() {
                     key={dog.chipNumber}
                     className="single-dogcard">
                     <article>
-                        <img src={dog.img} alt={dog.name} />
+                        <img src={dog.img} alt={dog.name} className="single-img" />
                     </article>
                     <article>
                         <h1 className="single-dogname">{dog.name}</h1>
