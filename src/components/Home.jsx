@@ -4,16 +4,21 @@ import './components.css';
 
 function Home() {
     const [dogs, setDogs] = useState([]);
+    const [dogs2, setDogs2] = useState([]);
     const url = "https://api.jsonbin.io/v3/b/64254cc2ace6f33a22007d35";
 
-    let dogsLocal = JSON.parse(localStorage.getItem("dogs"));
-    console.log(dogsLocal.length)
 
-    if (dogsLocal.length == 0 || dogsLocal == null) {
 
-        useEffect(() => {
+    useEffect(() => {
+
+
+        if (localStorage.dogs && localStorage.dogs.length > 2) {
+            let localDogs = (JSON.parse(localStorage.getItem("dogs")));
+            console.log("localStorage exist: ", localStorage.dogs);
+            setDogs(localDogs);
+            console.log("dogs = localDogs")
+        } else {
             const fetchDogData = async () => {
-
                 try {
                     const res = await fetch(url, {
                         headers: {
@@ -22,22 +27,21 @@ function Home() {
                     });
                     const data = await res.json();
                     setDogs(data.record);
+                    console.log("API: ", dogs);
 
-                    console.log(dogs);
                 } catch (error) {
                     console.error(error);
                 }
+                localStorage.setItem('dogs', JSON.stringify(dogs));
+                console.log("localStorage setitem: ", localStorage.dogs);
+
             }
             fetchDogData();
-            localStorage.setItem('dogs', JSON.stringify(dogs));
-        }, [])
 
 
-        dogsLocal = dogs
-        console.log(dogsLocal)
-    }
-    dogsLocal = JSON.parse(localStorage.getItem("dogs"));
-    console.log(dogsLocal)
+        }
+
+    }, [localStorage.dogs])
 
     return (
         <>
@@ -47,7 +51,7 @@ function Home() {
                         Doggy Daycare Center
                     </h1>
                     <p className="home-p">
-                        {dogsLocal.length} dogs registered. This appication is powered by {""}
+                        {dogs.length} dogs registered. This appication is powered by {""}
                         <a href="https://jsonbin.io" className="home-a">jsonbin.io</a>
                     </p>
                     {/* <form className="max-w-xl mx-auto" autoComplete="off">
@@ -61,7 +65,7 @@ function Home() {
                         </form> */}
                 </div>
                 <div className="home-div2">
-                    {dogsLocal.map((dog, index) => (
+                    {dogs.map((dog, index) => (
 
                         <Link
                             to={`/${index}`}

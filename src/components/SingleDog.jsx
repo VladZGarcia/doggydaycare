@@ -5,11 +5,12 @@ import './components.css';
 function SingleDog() {
 
     const { index } = useParams();
-
+    console.log("index: ", index)
     let dogsLocal = JSON.parse(localStorage.getItem("dogs"));
-    console.log(dogsLocal)
+    console.log("dogsLocal: ", dogsLocal[index]);
     let dog = (dogsLocal[index]);
-    console.log(dog)
+    console.log("dog: ", dog);
+    
     return (
         <>
             <section className="single-section">
